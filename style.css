@@ -34,11 +34,40 @@ img {
   align-items: center;
   gap: 5px;
 }
+a:-webkit-any-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 section {
   color: #23272a;
 }
-
+/* ----------------------------------------- */
+/* Stile Navbar */
+nav {
+  background-color: #5865f2;
+  display: grid;
+  grid-template-columns: 124px 1fr 124px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 5%;
+}
+#nav-link {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  gap: 30px;
+  font-weight: bold;
+}
+nav > #login-button {
+  justify-self: end;
+  padding: 7px 16px;
+}
 /* ----------------------------------------- */
 /* Stile per sections */
 .main-sections {
@@ -121,12 +150,15 @@ select {
   flex-direction: column;
   gap: 15px;
 }
-.grid-section > a:-webkit-any-link {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.9em;
+.img-lang-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  grid-column: 1 / 3;
 }
-.grid-section > a:hover {
-  text-decoration: underline;
+.img-lang-container > .imgs-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  width: 15vw;
 }
-/* lavorare all'img-container */
