@@ -1,6 +1,10 @@
 :root {
   font-family: "Noto Sans", sans-serif;
-  font-size: 24px;
+  font-size: 18px;
+  --discord: #5865f2;
+  --not-black: #23272a;
+  --white: #fff;
+  --bcg-color: #f6f6f6;
 }
 
 * {
@@ -16,6 +20,19 @@ img {
 .extra-bold {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
+  font-size: 3rem;
+}
+
+.button {
+  padding: 1% 2%;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 section {
@@ -37,7 +54,7 @@ section {
   height: 90vh;
 }
 .main-sections > *:nth-child(even) {
-  background-color: #f6f6f6;
+  background-color: var(--bcg-color);
   flex-direction: row-reverse;
 }
 .text {
@@ -46,7 +63,37 @@ section {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  font-size: 1.2rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+/* ----------------------------------------- */
+/* Stile per main section */
+.big-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 24px;
+  padding: 120px 40px 80px;
+  background-color: var(--bcg-color);
+}
+.big-text {
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-rendering: geometricPrecision;
+  text-align: center;
+}
+h3 {
+  font-size: 1.5rem;
+}
+#bottom-button {
+  background-color: var(--discord);
+  color: var(--white);
+  font-size: 1.2rem;
+}
+#bottom-button > img {
+  filter: invert();
 }
