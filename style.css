@@ -236,3 +236,18 @@ select {
   margin-top: 24px;
   width: 15vw;
 }
+hr {
+  margin: 0 8rem;
+  border-color: var(--discord);
+}
+.bottom-footer {
+  display: flex;
+  margin: 2.5rem 8rem;
+  width: 1470px;
+  justify-content: space-between;
+}
+#last-button {
+  background-color: var(--discord);
+  color: var(--white);
+  font-size: 0.9rem;
+}
