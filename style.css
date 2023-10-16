@@ -6,6 +6,7 @@
   --not-black: #23272a;
   --white: #fff;
   --bcg-color: #f6f6f6;
+  --first-breakpoint: 360px;
 }
 
 * {
@@ -52,202 +53,234 @@ section {
 }
 /* ----------------------------------------- */
 /* Stile Navbar */
-nav {
-  display: grid;
-  grid-template-columns: 124px 1fr 124px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1% 5%;
-}
-#nav-link {
-  justify-self: center;
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  gap: 30px;
-  font-weight: bold;
-}
-nav > #login-button {
-  justify-self: end;
-  padding: 7px 16px;
+@media screen and (min-width: 1024px) {
+  nav {
+    display: grid;
+    grid-template-columns: 124px 1fr 124px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8rem;
+  }
+  #nav-link {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    gap: 30px;
+    font-weight: bold;
+  }
+  nav > #login-button {
+    justify-self: end;
+    padding: 12% 16%;
+  }
+  /* ----------------------------------------- */
+  /* Stile Header */
+  header {
+    height: 80vh;
+    background-color: var(--hero-bg);
+    position: relative;
+    color: var(--white);
+  }
+  .hero-bg {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    margin-left: -1200px;
+    left: 50%;
+    z-index: 1;
+  }
+  .hero-img {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+  }
+  #hero-right-img {
+    margin-left: 410px;
+  }
+  #hero-left-img {
+    margin-left: -930px;
+  }
+  h1 {
+    margin-top: 30px;
+    font-size: 76px;
+    padding: 0 100px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 60px;
+    z-index: 3;
+  }
+  .hero-container > p {
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.2rem;
+    padding: 0 95px;
+    z-index: 3;
+  }
+  .hero-container {
+    height: 90vh;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    padding: 120px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    z-index: 3;
+  }
+  .buttons > button {
+    font-size: 1.2rem;
+    background-color: var(--white);
+    color: var(--not-black);
+    width: 350px;
+    padding: 3%;
+  }
+  #top-button:hover {
+    color: var(--discord);
+  }
+  #invert-button {
+    background-color: var(--not-black);
+    color: var(--white);
+  }
+  /* ----------------------------------------- */
+  /* Stile per sections */
+  .main-sections {
+    display: flex;
+    flex-direction: column;
+  }
+  .txt-img-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    width: 100%;
+    height: 90vh;
+  }
+  .main-sections > *:nth-child(even) {
+    background-color: var(--bcg-color);
+    flex-direction: row-reverse;
+  }
+  .text {
+    max-width: 440px;
+    inline-size: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  /* ----------------------------------------- */
+  /* Stile per main section */
+  .big-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+    padding: 120px 40px 80px;
+    background-color: var(--bcg-color);
+  }
+  .big-text {
+    max-width: 980px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-rendering: geometricPrecision;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  #bottom-button {
+    background-color: var(--discord);
+    color: var(--white);
+    font-size: 1.2rem;
+  }
+  #bottom-button > img {
+    filter: invert();
+  }
+  /* ----------------------------------------- */
+  /* Stile footer */
+  footer {
+    background-color: var(--not-black);
+    padding: 80px 0 64px;
+  }
+  select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    cursor: pointer;
+  }
+  select#lang-selector > option[value="en"] {
+    background-image: url(./img/flag.png);
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 0 8rem;
+    color: var(--discord);
+  }
+  .grid-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .img-lang-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-column: 1 / 3;
+  }
+  .img-lang-container > .imgs-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    width: 15vw;
+  }
+  hr {
+    margin: 0 8rem;
+    border-color: var(--discord);
+  }
+  .bottom-footer {
+    display: flex;
+    margin: 2.5rem 8rem;
+    justify-content: space-between;
+  }
+  #last-button {
+    background-color: var(--discord);
+    color: var(--white);
+    font-size: 0.9rem;
+  }
 }
 /* ----------------------------------------- */
-/* Stile Header */
-header {
-  height: 85vh;
-  background-color: var(--hero-bg);
-  position: relative;
-  color: var(--white);
-}
-.hero-bg {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  margin-left: -1200px;
-  left: 50%;
-  z-index: 1;
-}
-.hero-img {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  left: 50%;
-  z-index: 2;
-}
-#hero-right-img {
-  margin-left: 410px;
-}
-#hero-left-img {
-  margin-left: -930px;
-}
-h1 {
-  margin-top: 30px;
-  font-size: 76px;
-  padding: 0 100px;
-  font-weight: 800;
-  text-align: center;
-  line-height: 60px;
-  z-index: 3;
-}
-.hero-container > p {
-  text-align: center;
-  line-height: 30px;
-  font-size: 1.2rem;
-  padding: 0 95px;
-  z-index: 3;
-}
-.hero-container {
-  height: 90vh;
-  max-width: 80vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin: 0 auto;
-  padding: 120px;
-}
-.buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  z-index: 3;
-}
-.buttons > button {
-  font-size: 1.2rem;
-  background-color: var(--white);
-  color: var(--not-black);
-  width: 350px;
-  padding: 3%;
-}
-#invert-button {
-  filter: invert();
-}
-/* ----------------------------------------- */
-/* Stile per sections */
-.main-sections {
-  display: flex;
-  flex-direction: column;
-}
-.txt-img-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10%;
-  width: 100%;
-  height: 90vh;
-}
-.main-sections > *:nth-child(even) {
-  background-color: var(--bcg-color);
-  flex-direction: row-reverse;
-}
-.text {
-  max-width: 440px;
-  inline-size: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  font-size: 1.2rem;
-}
-h2 {
-  font-size: 2.5rem;
-}
-/* ----------------------------------------- */
-/* Stile per main section */
-.big-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 24px;
-  padding: 120px 40px 80px;
-  background-color: var(--bcg-color);
-}
-.big-text {
-  max-width: 980px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  text-rendering: geometricPrecision;
-  text-align: center;
-}
-h3 {
-  font-size: 1.5rem;
-}
-#bottom-button {
-  background-color: var(--discord);
-  color: var(--white);
-  font-size: 1.2rem;
-}
-#bottom-button > img {
-  filter: invert();
-}
-/* ----------------------------------------- */
-/* Stile footer */
-footer {
-  background-color: var(--not-black);
-  padding: 80px 0 64px;
-}
-select {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: var(--white);
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-  padding: 0 40px;
-  color: var(--discord);
-}
-.grid-section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.img-lang-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  grid-column: 1 / 3;
-}
-.img-lang-container > .imgs-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
-  width: 15vw;
-}
-hr {
-  margin: 0 8rem;
-  border-color: var(--discord);
-}
-.bottom-footer {
-  display: flex;
-  margin: 2.5rem 8rem;
-  width: 1470px;
-  justify-content: space-between;
-}
-#last-button {
-  background-color: var(--discord);
-  color: var(--white);
-  font-size: 0.9rem;
-}
+/* Creazione layout responsive */
+/* @media screen and (min-width: 360px ) {
+  nav {
+    display: grid;
+    width: var(--first-breakpoint);
+    grid-template-columns: 30% 40% 30%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8rem;
+  }
+  #nav-link {
+    display: none;
+  }
+  nav > #login-button {
+    justify-self: end;
+    padding: 12% 16%;
+  }
+  body {
+    background-color: #404eed;
+  }
+} */
